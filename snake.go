@@ -32,7 +32,7 @@ func (s *Snake) dead() bool {
 }
 
 func (s *Snake) eat() {
-	s.length++
+	s.length += 3
 }
 
 func (s *Snake) update() {

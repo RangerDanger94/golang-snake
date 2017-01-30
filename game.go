@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"math"
 	"math/rand"
 	"time"
@@ -34,7 +33,6 @@ func place(r *sdl.Rect) {
 	rows := int32(math.Floor(float64(int32(screenHeight) / gridSize)))
 
 	*r = sdl.Rect{X: rand.Int31n(cols) * gridSize, Y: rand.Int31n(rows) * gridSize, W: gridSize, H: gridSize}
-	fmt.Printf("Starting Position: %v,%v\n", r.X, r.Y)
 }
 
 func main() {
@@ -91,7 +89,6 @@ func main() {
 		renderer.Clear()
 
 		if sdl.GetTicks() > nextGameTick {
-			fmt.Printf(s.string())
 			// Restart
 			if borderCollision(&s.body[0]) || s.dead() {
 				s = new(0, 0, gridSize, gridSize)
